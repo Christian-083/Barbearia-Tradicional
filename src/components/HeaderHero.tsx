@@ -73,7 +73,7 @@ export const HeaderHero: React.FC = () => {
 
         <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-normal">
           Cortes de precisão, ambiente exclusivo e o cuidado que você merece. <br className="hidden md:block" />
-          Agende sua experiência com o mestre Seu Galdino.
+          Agende sua experiência com a Barbearia Tradicional.
         </p>
 
         <button
