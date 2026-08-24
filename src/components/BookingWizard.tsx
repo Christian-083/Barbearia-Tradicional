@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Scissors, Calendar, Clock, User, Phone, Check, ChevronLeft } from 'lucide-react';
 import { Service, Barber } from '../types';
 import { BARBERSHOP_PHONE, BARBERS } from '../data/services';
+import { IMAGES } from '../config/images';
 import {
   addBooking,
   getBookings,
@@ -257,10 +258,10 @@ Obrigado! 🙏`;
                   className="relative shrink-0 snap-center w-[240px] md:w-[260px] h-[320px] md:h-[360px] rounded-3xl cursor-pointer overflow-hidden group shadow-lg border border-border/30 hover:border-primary/50 transition-all duration-300"
                 >
                   <img
-                    src={service.image || '/images/corte-de-cabelo-social-2.webp'}
+                    src={service.image || IMAGES.services.corteSocial}
                     alt={service.name}
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = '/images/corte-de-cabelo-social-2.webp';
+                      (e.currentTarget as HTMLImageElement).src = IMAGES.services.corteSocial;
                     }}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />

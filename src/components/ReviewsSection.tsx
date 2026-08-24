@@ -1,15 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { Star } from 'lucide-react';
+import { IMAGES } from '../config/images';
 
-const REVIEWS = [
-  "/images/depoimento-1.png",
-  "/images/depoimento-2.png",
-  "/images/depoimento-3.png",
-  "/images/depoimento-4.png",
-  "/images/depoimento-5.png",
-  "/images/depoimento-6.png",
-];
+const REVIEWS = IMAGES.testimonials;
 
 export const ReviewsSection: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);

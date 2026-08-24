@@ -9,6 +9,7 @@ import {
   Expense,
   InventoryMovement,
 } from '../types';
+import { IMAGES } from '../config/images';
 
 export const SERVICES: Service[] = [
   {
@@ -16,21 +17,21 @@ export const SERVICES: Service[] = [
     name: 'Degradê',
     time: 30,
     price: 30,
-    image: '/images/service-degrade.png',
+    image: IMAGES.services.degrade,
   },
   {
     id: 's2',
     name: 'Corte Social',
     time: 30,
     price: 30,
-    image: '/images/corte-de-cabelo-social-2.webp',
+    image: IMAGES.services.corteSocial,
   },
   {
     id: 's4',
     name: 'Barba',
     time: 20,
     price: 20,
-    image: '/images/service-barba.jpg',
+    image: IMAGES.services.barba,
   },
 ];
 
@@ -39,7 +40,7 @@ export const BARBERS: Barber[] = [
     id: 'b1',
     name: 'Dona Renata',
     phone: '5588998577627',
-    photo: '/images/about.jpg',
+    photo: IMAGES.about,
     commissionServicePercent: 100,
     commissionProductPercent: 100,
     role: 'master',
@@ -338,41 +339,22 @@ export const INITIAL_COMANDAS: Comanda[] = [
   },
 ];
 
-export const GALLERY_IMAGES = [
-  '/images/gallery-1.jpg',
-  '/images/gallery-3.jpg',
-  '/images/gallery-4.jpg',
-  '/images/gallery-5.jpg',
-  '/images/gallery-6.jpg',
-  '/images/gallery-8.jpg',
-  '/images/gallery-10.jpg',
-  '/images/gallery-11.jpg',
-  '/images/gallery-12.jpg',
-  '/images/gallery-13.jpg',
-  '/images/gallery-14.jpg',
-  '/images/instagram.jpg',
-];
+export const GALLERY_IMAGES = IMAGES.gallery;
 
 export const BARBERSHOP_PHONE = '5588998577627';
 
 export const ADDRESS = 'Avenida Governador Plácido Aderaldo Castelo branco 535 - Lagoa Seca, Juazeiro do Norte - CE, 63040-540';
 
-export const REVIEWS_IMAGES = [
-  '/images/gallery-1.jpg',
-  '/images/gallery-3.jpg',
-  '/images/gallery-4.jpg',
-  '/images/gallery-5.jpg',
-  '/images/gallery-6.jpg',
-];
+export const REVIEWS_IMAGES = IMAGES.gallery.slice(0, 5);
 
 export const INITIAL_REVIEWS = [
   {
     id: 'rev-1',
     name: 'Gabriel Santos',
     avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80',
-    photo: '/images/gallery-1.jpg',
+    photo: IMAGES.gallery[0],
     rating: 5,
-    message: 'Melhor degradê de Natal! A Dona Renata é braba demais, atendimento nota 1000 e cerveja sempre geladíssima.',
+    message: 'Melhor degradê de Juazeiro do Norte! A Dona Renata é braba demais, atendimento nota 1000 e ambiente sempre agradável.',
     service: 'Degradê Navalhado',
     date: 'há 2 dias',
     verified: true,
@@ -381,10 +363,10 @@ export const INITIAL_REVIEWS = [
     id: 'rev-2',
     name: 'Lucas Ferreira',
     avatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&auto=format&fit=crop&q=80',
-    photo: '/images/gallery-6.jpg',
+    photo: IMAGES.gallery[4],
     rating: 5,
-    message: 'O ambiente é sensacional. Toalha quente na barba e alinhamento impecável. Assinei o Plano VIP e economizo bastante no mês!',
-    service: 'Corte + Barboterapia',
+    message: 'O ambiente é sensacional. Toalha quente na barba e alinhamento impecável. Atendimento nota 10!',
+    service: 'Corte + Barba',
     date: 'há 5 dias',
     verified: true,
   },
@@ -392,10 +374,10 @@ export const INITIAL_REVIEWS = [
     id: 'rev-3',
     name: 'Rodrigo Medeiros',
     avatar: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=150&auto=format&fit=crop&q=80',
-    photo: '/images/gallery-3.jpg',
+    photo: IMAGES.gallery[1],
     rating: 5,
-    message: 'Agendamento super rápido pelo site sem ter que esperar na fila. Pontualidade máxima e corte na tesoura perfeito!',
-    service: 'Corte Social na Tesoura',
+    message: 'Agendamento super rápido pelo site sem ter que esperar na fila. Pontualidade máxima e corte perfeito!',
+    service: 'Corte Social',
     date: 'há 1 semana',
     verified: true,
   },
@@ -403,9 +385,9 @@ export const INITIAL_REVIEWS = [
     id: 'rev-4',
     name: 'Matheus Lima',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-    photo: '/images/gallery-4.jpg',
+    photo: IMAGES.gallery[2],
     rating: 5,
-    message: 'Atendimento do Alex foi nota dez! Cuidado extremo nos detalhes e acabamento impecável do pezinho.',
+    message: 'Atendimento nota dez! Cuidado extremo nos detalhes e acabamento impecável do pezinho.',
     service: 'Degradê + Pezinho',
     date: 'há 2 semanas',
     verified: true,
@@ -414,10 +396,10 @@ export const INITIAL_REVIEWS = [
     id: 'rev-5',
     name: 'Renan Souza',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    photo: '/images/gallery-5.jpg',
+    photo: IMAGES.gallery[3],
     rating: 5,
     message: 'Estrutura top, ambiente climatizado, música boa e atendimento VIP. Recomendo de olhos fechados pra qualquer um!',
-    service: 'Barba Completa com Toalha Quente',
+    service: 'Barba Completa',
     date: 'há 3 semanas',
     verified: true,
   },

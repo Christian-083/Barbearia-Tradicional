@@ -26,8 +26,8 @@ import {
 
 const BOOKINGS_KEY = 'galdino_bookings';
 const COMPLETED_KEY = 'galdino_completed';
-const BARBERS_KEY = 'galdino_barbers_v2';
-const SERVICES_KEY = 'galdino_services_v9';
+const BARBERS_KEY = 'galdino_barbers_v3';
+const SERVICES_KEY = 'galdino_services_v10';
 const PRODUCTS_KEY = 'galdino_products';
 const PLANS_KEY = 'galdino_plans';
 const SUBSCRIPTIONS_KEY = 'galdino_subscriptions';

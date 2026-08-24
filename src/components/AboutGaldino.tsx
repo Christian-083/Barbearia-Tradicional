@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { IMAGES } from '../config/images';
 
 export const AboutGaldino: React.FC = () => {
   return (
@@ -12,11 +13,8 @@ export const AboutGaldino: React.FC = () => {
         className="relative"
       >
         <img
-          src="/images/about.jpg"
+          src={IMAGES.about}
           alt="Dona Renata"
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src = '/images/person.jpg';
-          }}
           className="rounded-3xl w-full aspect-[4/5] object-cover object-center card-shadow border border-border/40"
         />
         <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-primary text-primary-foreground p-4 md:p-6 rounded-2xl shadow-[0_10px_25px_-5px_hsl(14_65%_38%/0.5)]">

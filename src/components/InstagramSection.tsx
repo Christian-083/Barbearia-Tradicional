@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Instagram } from 'lucide-react';
+import { IMAGES } from '../config/images';
 
 export const InstagramSection: React.FC = () => {
   return (
@@ -18,12 +19,8 @@ export const InstagramSection: React.FC = () => {
 
         <div className="w-full flex justify-center">
           <img
-            src="/images/instagram.jpg"
+            src={IMAGES.instagram}
             alt="Instagram A Tradicional Barbearia"
-            onError={(e) => {
-              // Fallback to alias if needed
-              (e.currentTarget as HTMLImageElement).src = '/images/Barbearia-Instragram.jpeg';
-            }}
             className="w-full h-auto max-h-[500px] object-contain rounded-2xl"
           />
         </div>

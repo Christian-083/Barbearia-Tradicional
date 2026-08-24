@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { GALLERY_IMAGES } from '../data/services';
+import { IMAGES } from '../config/images';
 
 export const GalleryCarousel: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -91,7 +92,7 @@ export const GalleryCarousel: React.FC = () => {
               alt={`Galeria ${index + 1}`}
               loading="lazy"
               onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = '/images/gallery-1.jpg';
+                (e.currentTarget as HTMLImageElement).src = IMAGES.gallery[0];
               }}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />

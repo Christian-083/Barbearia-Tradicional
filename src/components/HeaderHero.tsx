@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Shield } from 'lucide-react';
 import { isOpenNow } from '../utils/whatsapp';
+import { IMAGES } from '../config/images';
 
 export const HeaderHero: React.FC = () => {
   const [openStatus, setOpenStatus] = useState<boolean>(isOpenNow());
@@ -33,11 +34,8 @@ export const HeaderHero: React.FC = () => {
       </div>
 
       <img
-        src="/images/hero.jpg"
+        src={IMAGES.hero}
         alt="A Tradicional Barbearia"
-        onError={(e) => {
-          (e.currentTarget as HTMLImageElement).src = '/images/topo.jpg';
-        }}
         className="absolute inset-0 w-full h-full object-cover object-top opacity-40"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />

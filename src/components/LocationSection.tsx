@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
+import { IMAGES } from '../config/images';
 
 export const LocationSection: React.FC = () => {
   const handleOpenDirections = () => {
@@ -56,11 +57,8 @@ export const LocationSection: React.FC = () => {
         {/* Location Image */}
         <div className="w-full h-44 sm:h-56 md:h-64 rounded-xl overflow-hidden">
           <img 
-            src="/images/fachada.jpg" 
+            src={IMAGES.fachada} 
             alt="Fachada A Tradicional Barbearia" 
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = '/images/Fachada_Barbearia.jpg';
-            }}
             className="w-full h-full object-cover"
           />
         </div>
