@@ -23,9 +23,9 @@ export const InstagramSection: React.FC = () => {
             alt="Instagram A Tradicional Barbearia"
             onError={(e) => {
               const target = e.currentTarget as HTMLImageElement;
-              if (!target.dataset.tried1) {
-                target.dataset.tried1 = 'true';
-                target.src = '/Barbearia_Tradicional/Barbearia-Instragram.jpeg';
+              if (!target.dataset.tried) {
+                target.dataset.tried = 'true';
+                target.src = '/Image/Barbearia-Instragram.jpeg';
               }
             }}
             className="w-full h-auto max-h-[500px] object-contain rounded-2xl"
@@ -36,7 +36,7 @@ export const InstagramSection: React.FC = () => {
           href="https://www.instagram.com/a_tradicional_barbearia"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-xl font-bold text-foreground transition-all hover:opacity-90 active:scale-95 text-base cursor-pointer shadow-lg"
+          className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-xl font-bold text-white transition-all hover:opacity-90 active:scale-95 text-base cursor-pointer shadow-lg"
         >
           <Instagram className="w-5 h-5" />
           Seguir no Instagram

@@ -3,14 +3,14 @@ export interface Service {
   name: string;
   time: number; // in minutes
   price: number; // in BRL
-  image: string;
+  image?: string;
 }
 
 export interface Barber {
   id: string;
   name: string;
   phone: string;
-  photo: string;
+  photo?: string;
   commissionServicePercent: number; // e.g., 50%
   commissionProductPercent: number; // e.g., 10%
   role: 'master' | 'barber';

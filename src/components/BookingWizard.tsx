@@ -1,9 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Scissors, Calendar, Clock, User, Phone, Check, ChevronLeft } from 'lucide-react';
+import { Scissors, Calendar, Clock, User, Phone, Check, ChevronLeft, Sparkles } from 'lucide-react';
 import { Service, Barber } from '../types';
 import { BARBERSHOP_PHONE, BARBERS } from '../data/services';
-import { IMAGES } from '../config/images';
 import {
   addBooking,
   getBookings,
@@ -247,48 +246,58 @@ Obrigado! 🙏`;
         {step === 1 && (
           <div className="flex flex-col items-center w-full">
             <div
-              className="w-full flex gap-4 overflow-x-auto pb-6 pt-2 px-2 no-scrollbar snap-x snap-mandatory"
+              className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 pb-2 pt-2 px-2"
             >
               {SERVICES.map((service) => (
                 <motion.div
                   key={service.id || service.name}
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleSelectPrimaryService(service)}
-                  className="relative shrink-0 snap-center w-[240px] md:w-[260px] h-[320px] md:h-[360px] rounded-3xl cursor-pointer overflow-hidden group shadow-lg border border-border/30 hover:border-primary/50 transition-all duration-300"
+                  className="rounded-3xl cursor-pointer bg-card border border-border/60 hover:border-primary/60 card-shadow transition-all duration-300 flex flex-col justify-between h-[260px] md:h-[280px] relative overflow-hidden group"
                 >
-                  <img
-                    src={service.image || IMAGES.services.corteSocial}
-                    alt={service.name}
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = IMAGES.services.corteSocial;
-                    }}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  {/* Dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-90 transition-opacity duration-300"></div>
-                  
-                  {/* Content at bottom left */}
-                  <div className="absolute bottom-5 left-5 right-5 flex flex-col items-start text-left z-10">
-                    <h4 className="font-extrabold text-2xl text-white mb-0.5 group-hover:text-primary transition-colors leading-tight">
-                      {service.name}
-                    </h4>
-                    <span className="text-gray-300 text-sm font-medium mb-3">
+                  {service.image ? (
+                    <>
+                      <img
+                        src={service.image}
+                        alt={service.name}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/20" />
+                    </>
+                  ) : (
+                    <div className="absolute inset-0 bg-card" />
+                  )}
+
+                  <div className="relative z-10 p-5 flex items-center justify-between">
+                    <div className="w-10 h-10 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <Scissors className="w-5 h-5" />
+                    </div>
+                    <span className="flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white border border-white/10">
+                      <Clock className="w-3.5 h-3.5 text-primary" />
                       {service.time} min
                     </span>
-                    <span className="font-black text-xl flex items-center gap-1.5 text-primary">
-                      <span>R$</span> <span>{service.price}</span>
-                    </span>
+                  </div>
+                  
+                  <div className="relative z-10 p-5 pt-0 space-y-3">
+                    <div>
+                      <h4 className="font-extrabold text-xl md:text-2xl text-white group-hover:text-primary transition-colors leading-tight">
+                        {service.name}
+                      </h4>
+                      <p className="text-xs text-gray-300 mt-0.5">
+                        Acabamento refinado e atendimento exclusivo
+                      </p>
+                    </div>
+
+                    <div className="pt-2.5 border-t border-white/15 flex items-center justify-between">
+                      <span className="text-xs text-gray-400 uppercase font-bold tracking-wider">A partir de</span>
+                      <span className="font-black text-2xl text-primary">
+                        R$ {service.price}
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
               ))}
-            </div>
-
-            {/* Arraste para o lado hint */}
-            <div className="flex items-center gap-4 w-full max-w-xl mt-3 opacity-50 px-2">
-              <div className="h-px bg-foreground/20 flex-1"></div>
-              <span className="text-xs text-foreground/70 whitespace-nowrap">← Arraste para o lado →</span>
-              <div className="h-px bg-foreground/20 flex-1"></div>
             </div>
           </div>
         )}

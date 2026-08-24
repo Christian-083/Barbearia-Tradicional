@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin } from 'lucide-react';
+import { MapPin, Navigation } from 'lucide-react';
 import { IMAGES } from '../config/images';
 
 export const LocationSection: React.FC = () => {
@@ -28,7 +28,7 @@ export const LocationSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-[#151515] p-3 md:p-5 rounded-[2rem] border border-white/5 shadow-2xl space-y-4"
+        className="bg-[#151515] p-4 md:p-6 rounded-[2rem] border border-white/5 shadow-2xl space-y-4"
       >
         {/* Map iframe */}
         <div className="w-full h-56 md:h-72 rounded-2xl overflow-hidden relative">
@@ -50,20 +50,20 @@ export const LocationSection: React.FC = () => {
           onClick={handleOpenDirections}
           className="w-full py-4 bg-primary text-primary-foreground font-extrabold text-sm rounded-xl transition-all hover:brightness-110 active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
         >
-          <MapPin className="w-5 h-5" />
-          Ir até a Barbearia
+          <Navigation className="w-5 h-5" />
+          Como Chegar / Traçar Rota
         </button>
 
-        {/* Location Image */}
-        <div className="w-full h-44 sm:h-56 md:h-64 rounded-xl overflow-hidden">
+        {/* Location Image: Fachada_Barbearia.jpg */}
+        <div className="w-full h-48 sm:h-60 rounded-xl overflow-hidden border border-border/40">
           <img 
             src={IMAGES.fachada} 
             alt="Fachada A Tradicional Barbearia" 
             onError={(e) => {
               const target = e.currentTarget as HTMLImageElement;
-              if (!target.dataset.tried1) {
-                target.dataset.tried1 = 'true';
-                target.src = '/Barbearia_Tradicional/Fachada_Barbearia.jpg';
+              if (!target.dataset.tried) {
+                target.dataset.tried = 'true';
+                target.src = '/Image/Fachada_Barbearia.jpg';
               }
             }}
             className="w-full h-full object-cover"
@@ -72,9 +72,11 @@ export const LocationSection: React.FC = () => {
 
         {/* Address */}
         <div className="text-center pt-2 pb-2">
-          <p className="text-white font-bold text-base md:text-lg tracking-wide">Avenida Gov. Plácido Aderaldo Castelo branco, 535</p>
+          <p className="text-white font-bold text-base md:text-lg tracking-wide">
+            Avenida Gov. Plácido Aderaldo Castelo Branco, 535
+          </p>
           <p className="text-muted-foreground text-[11px] md:text-xs mt-1 font-medium">
-            Lagoa Seca, Juazeiro do Norte - CE • 63040-540
+            Lagoa Seca, Juazeiro do Norte - CE • CEP 63040-540
           </p>
         </div>
       </motion.div>

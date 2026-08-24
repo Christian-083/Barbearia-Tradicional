@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Shield } from 'lucide-react';
+import { Shield, Scissors } from 'lucide-react';
 import { isOpenNow } from '../utils/whatsapp';
 import { IMAGES } from '../config/images';
 
@@ -21,7 +21,26 @@ export const HeaderHero: React.FC = () => {
   };
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+      {/* Background Image: Barbearia_Tradicional TOPO.jpg */}
+      <img
+        src={IMAGES.hero}
+        alt="Barbearia Tradicional TOPO"
+        onError={(e) => {
+          const target = e.currentTarget as HTMLImageElement;
+          if (!target.dataset.tried) {
+            target.dataset.tried = 'true';
+            target.src = '/Image/Barbearia_Tradicional TOPO.jpg';
+          }
+        }}
+        className="absolute inset-0 w-full h-full object-cover object-top opacity-35"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background" />
+
+      {/* Ambient background glow elements */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+
       {/* Top Header Bar with Admin Link */}
       <div className="absolute top-6 right-6 z-20 flex items-center gap-3">
         <Link
@@ -33,36 +52,25 @@ export const HeaderHero: React.FC = () => {
         </Link>
       </div>
 
-      <img
-        src={IMAGES.hero}
-        alt="A Tradicional Barbearia"
-        onError={(e) => {
-          const target = e.currentTarget as HTMLImageElement;
-          if (!target.dataset.tried1) {
-            target.dataset.tried1 = 'true';
-            target.src = '/Barbearia_Tradicional/Barbearia_Tradicional TOPO.jpg';
-          } else if (!target.dataset.tried2) {
-            target.dataset.tried2 = 'true';
-            target.src = '/Barbearia_Tradicional/Barbearia_Tradicional_TOPO.jpg';
-          }
-        }}
-        className="absolute inset-0 w-full h-full object-cover object-top opacity-40"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="relative z-10 text-center px-6 max-w-4xl"
       >
-        <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass card-shadow text-sm font-medium">
+        <div className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass card-shadow text-sm font-medium">
           <span
             className={`w-2 h-2 rounded-full animate-pulse ${
               openStatus ? 'bg-green-500' : 'bg-red-500'
             }`}
           />
           <span>{openStatus ? 'Aberto Agora' : 'Fechado Agora'}</span>
+        </div>
+
+        <div className="flex items-center justify-center gap-3 mb-4 text-primary">
+          <Scissors className="w-6 h-6" />
+          <span className="text-sm font-bold tracking-widest uppercase">A Tradicional Barbearia</span>
+          <Scissors className="w-6 h-6 rotate-180" />
         </div>
 
         <h1 className="text-4xl md:text-7xl font-bold mb-6 tracking-tight">

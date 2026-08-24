@@ -50,7 +50,6 @@ export const BARBERS: Barber[] = [
     id: 'b2',
     name: 'Alex Silva',
     phone: '84988776655',
-    photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
     commissionServicePercent: 50,
     commissionProductPercent: 10,
     role: 'barber',
@@ -60,7 +59,6 @@ export const BARBERS: Barber[] = [
     id: 'b3',
     name: 'Bruno Costa',
     phone: '84999887766',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80',
     commissionServicePercent: 40,
     commissionProductPercent: 15,
     role: 'barber',
@@ -351,8 +349,6 @@ export const INITIAL_REVIEWS = [
   {
     id: 'rev-1',
     name: 'Gabriel Santos',
-    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80',
-    photo: IMAGES.gallery[0],
     rating: 5,
     message: 'Melhor degradê de Juazeiro do Norte! A Dona Renata é braba demais, atendimento nota 1000 e ambiente sempre agradável.',
     service: 'Degradê Navalhado',
@@ -362,8 +358,6 @@ export const INITIAL_REVIEWS = [
   {
     id: 'rev-2',
     name: 'Lucas Ferreira',
-    avatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&auto=format&fit=crop&q=80',
-    photo: IMAGES.gallery[4],
     rating: 5,
     message: 'O ambiente é sensacional. Toalha quente na barba e alinhamento impecável. Atendimento nota 10!',
     service: 'Corte + Barba',
@@ -373,8 +367,6 @@ export const INITIAL_REVIEWS = [
   {
     id: 'rev-3',
     name: 'Rodrigo Medeiros',
-    avatar: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=150&auto=format&fit=crop&q=80',
-    photo: IMAGES.gallery[1],
     rating: 5,
     message: 'Agendamento super rápido pelo site sem ter que esperar na fila. Pontualidade máxima e corte perfeito!',
     service: 'Corte Social',
@@ -384,8 +376,6 @@ export const INITIAL_REVIEWS = [
   {
     id: 'rev-4',
     name: 'Matheus Lima',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-    photo: IMAGES.gallery[2],
     rating: 5,
     message: 'Atendimento nota dez! Cuidado extremo nos detalhes e acabamento impecável do pezinho.',
     service: 'Degradê + Pezinho',
@@ -395,8 +385,6 @@ export const INITIAL_REVIEWS = [
   {
     id: 'rev-5',
     name: 'Renan Souza',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    photo: IMAGES.gallery[3],
     rating: 5,
     message: 'Estrutura top, ambiente climatizado, música boa e atendimento VIP. Recomendo de olhos fechados pra qualquer um!',
     service: 'Barba Completa',

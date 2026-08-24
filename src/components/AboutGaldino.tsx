@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Award } from 'lucide-react';
 import { IMAGES } from '../config/images';
 
 export const AboutGaldino: React.FC = () => {
@@ -14,12 +15,12 @@ export const AboutGaldino: React.FC = () => {
       >
         <img
           src={IMAGES.about}
-          alt="Dona Renata"
+          alt="Foto Dona Renata Barbearia Tradicional"
           onError={(e) => {
             const target = e.currentTarget as HTMLImageElement;
-            if (!target.dataset.tried1) {
-              target.dataset.tried1 = 'true';
-              target.src = '/Barbearia_Tradicional/Foto_DA_PESSOA_BARBEARIA_TRADICIONAL.jpg';
+            if (!target.dataset.tried) {
+              target.dataset.tried = 'true';
+              target.src = '/Image/Foto_DA_PESSOA_BARBEARIA_TRADICIONAL.jpg';
             }
           }}
           className="rounded-3xl w-full aspect-[4/5] object-cover object-center card-shadow border border-border/40"
@@ -36,6 +37,11 @@ export const AboutGaldino: React.FC = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+          <Award className="w-4 h-4" />
+          <span>Mestre Barbeira</span>
+        </div>
+
         <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
           Dona Renata{' '}
           <span className="text-primary block text-xl md:text-2xl opacity-80 font-normal mt-1">
