@@ -36,8 +36,9 @@ export const HeaderHero: React.FC = () => {
         className="absolute inset-0 w-full h-full object-cover object-top opacity-50"
       />
       
-      {/* Clean Gradient Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      {/* Bottom Shading Overlay */}
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
 
       {/* Top Header Bar with Admin Link */}
       <div className="absolute top-6 right-6 z-20 flex items-center gap-3">
