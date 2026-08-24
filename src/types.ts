@@ -4,6 +4,7 @@ export interface Service {
   time: number; // in minutes
   price: number; // in BRL
   image?: string;
+  category?: string;
 }
 
 export interface Barber {
