@@ -225,19 +225,19 @@ Obrigado! 🙏`;
           )}
           <div className="flex items-center gap-6 sm:gap-16">
             <div className="flex flex-col items-center gap-2">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${step === 1 || step === 1.5 || step === 1.8 ? 'bg-[#ffc107] text-black shadow-lg shadow-[#ffc107]/20' : 'bg-secondary text-muted-foreground'}`}>1</div>
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${step === 1 || step === 1.5 || step === 1.8 ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20' : 'bg-secondary text-muted-foreground'}`}>1</div>
               <span className="text-xs text-muted-foreground font-medium">Serviço</span>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${step === 2 ? 'bg-[#ffc107] text-black shadow-lg shadow-[#ffc107]/20' : step > 2 ? 'bg-primary/20 text-primary' : 'bg-secondary text-muted-foreground'}`}>2</div>
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${step === 2 ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20' : step > 2 ? 'bg-primary/20 text-primary' : 'bg-secondary text-muted-foreground'}`}>2</div>
               <span className="text-xs text-muted-foreground font-medium">Data</span>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${step === 3 ? 'bg-[#ffc107] text-black shadow-lg shadow-[#ffc107]/20' : step > 3 ? 'bg-primary/20 text-primary' : 'bg-secondary text-muted-foreground'}`}>3</div>
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${step === 3 ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20' : step > 3 ? 'bg-primary/20 text-primary' : 'bg-secondary text-muted-foreground'}`}>3</div>
               <span className="text-xs text-muted-foreground font-medium">Horário</span>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${step === 4 ? 'bg-[#ffc107] text-black shadow-lg shadow-[#ffc107]/20' : 'bg-secondary text-muted-foreground'}`}>4</div>
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${step === 4 ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20' : 'bg-secondary text-muted-foreground'}`}>4</div>
               <span className="text-xs text-muted-foreground font-medium">Dados</span>
             </div>
           </div>
@@ -245,58 +245,33 @@ Obrigado! 🙏`;
            {/* STEP 1: Primary Services */}
         {step === 1 && (
           <div className="flex flex-col items-center w-full">
-            <div
-              className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 pb-2 pt-2 px-2"
-            >
+            <div className="w-full flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory no-scrollbar -mx-2 px-2">
               {SERVICES.map((service) => (
-                <motion.div
+                <div
                   key={service.id || service.name}
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
                   onClick={() => handleSelectPrimaryService(service)}
-                  className="rounded-3xl cursor-pointer bg-card border border-border/60 hover:border-primary/60 card-shadow transition-all duration-300 flex flex-col justify-between h-[260px] md:h-[280px] relative overflow-hidden group"
+                  className="flex-shrink-0 w-[200px] md:w-[220px] h-[240px] md:h-[270px] rounded-2xl border border-border hover:border-primary/50 transition-all text-center group overflow-hidden snap-center relative cursor-pointer"
                 >
                   {service.image ? (
-                    <>
-                      <img
-                        src={service.image}
-                        alt={service.name}
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/20" />
-                    </>
+                    <img
+                      src={service.image}
+                      alt={service.name}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   ) : (
                     <div className="absolute inset-0 bg-card" />
                   )}
-
-                  <div className="relative z-10 p-5 flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      <Scissors className="w-5 h-5" />
-                    </div>
-                    <span className="flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white border border-white/10">
-                      <Clock className="w-3.5 h-3.5 text-primary" />
-                      {service.time} min
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-left">
+                    <h3 className="font-bold text-sm md:text-base text-white group-hover:text-primary transition-colors">
+                      {service.name}
+                    </h3>
+                    <p className="text-xs text-white/70 mt-1">{service.time} min</p>
+                    <span className="text-lg font-mono font-bold mt-1 text-primary block">
+                      R$ {service.price}
                     </span>
                   </div>
-                  
-                  <div className="relative z-10 p-5 pt-0 space-y-3">
-                    <div>
-                      <h4 className="font-extrabold text-xl md:text-2xl text-white group-hover:text-primary transition-colors leading-tight">
-                        {service.name}
-                      </h4>
-                      <p className="text-xs text-gray-300 mt-0.5">
-                        Acabamento refinado e atendimento exclusivo
-                      </p>
-                    </div>
-
-                    <div className="pt-2.5 border-t border-white/15 flex items-center justify-between">
-                      <span className="text-xs text-gray-400 uppercase font-bold tracking-wider">A partir de</span>
-                      <span className="font-black text-2xl text-primary">
-                        R$ {service.price}
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

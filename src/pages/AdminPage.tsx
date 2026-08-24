@@ -52,7 +52,6 @@ import {
 import { buildWhatsAppLink, formatPhoneMask } from '../utils/whatsapp';
 
 // Modular Components
-import { SqlDiagramModal } from '../components/admin/SqlDiagramModal';
 import { ComandaModal } from '../components/admin/ComandaModal';
 import { FinanceDashboard } from '../components/admin/FinanceDashboard';
 import { CrmManager } from '../components/admin/CrmManager';
@@ -89,7 +88,6 @@ export const AdminPage: React.FC = () => {
   const [selectedBarberFilter, setSelectedBarberFilter] = useState<string>('all');
 
   // Modals
-  const [isSqlModalOpen, setIsSqlModalOpen] = useState(false);
   const [comandaBooking, setComandaBooking] = useState<Booking | null>(null);
   const [isComandaModalOpen, setIsComandaModalOpen] = useState(false);
 
@@ -374,16 +372,6 @@ Estamos à disposição! 💈`;
           </div>
 
           <div className="flex items-center gap-2 flex-wrap">
-            {!loggedInBarber && (
-              <button
-                onClick={() => setIsSqlModalOpen(true)}
-                className="px-3.5 py-2 text-xs font-semibold rounded-xl border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-colors cursor-pointer flex items-center gap-1.5"
-                title="Ver Arquitetura do Banco de Dados SQL"
-              >
-                <Database className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">Esquema SQL</span>
-              </button>
-            )}
             <button
               onClick={() => navigate('/')}
               className="px-3.5 py-2 text-xs font-semibold rounded-xl border border-border bg-secondary hover:bg-secondary/80 transition-colors cursor-pointer"
@@ -886,10 +874,7 @@ Estamos à disposição! 💈`;
           </div>
         )}
       </div>
-
-      {/* SQL Architecture Modal */}
-      <SqlDiagramModal isOpen={isSqlModalOpen} onClose={() => setIsSqlModalOpen(false)} />
-
+      
       {/* Comanda Modal */}
       <ComandaModal
         isOpen={isComandaModalOpen}

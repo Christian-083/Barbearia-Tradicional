@@ -71,7 +71,7 @@ export const GalleryCarousel: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-bold tracking-tight"
         >
-          Nossos Trabalhos
+          Nossos cortes
         </motion.h2>
         <p className="text-muted-foreground mt-2">
           Confira alguns dos cortes e acabamentos feitos no nosso espaço.

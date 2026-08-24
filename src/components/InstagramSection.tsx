@@ -11,9 +11,9 @@ export const InstagramSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="glass p-6 md:p-8 rounded-3xl card-shadow space-y-6 border border-border/40"
+        className="glass p-6 md:p-8 rounded-3xl card-shadow space-y-6"
       >
-        <h2 className="text-2xl md:text-3xl font-bold text-center tracking-tight">
+        <h2 className="text-2xl md:text-3xl font-bold text-center">
           Siga no Instagram
         </h2>
 

@@ -23,9 +23,9 @@ export const AboutGaldino: React.FC = () => {
               target.src = '/Image/Foto_DA_PESSOA_BARBEARIA_TRADICIONAL.jpg';
             }
           }}
-          className="rounded-3xl w-full aspect-[4/5] object-cover object-center card-shadow border border-border/40"
+          className="rounded-3xl w-full aspect-square object-cover card-shadow"
         />
-        <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-primary text-primary-foreground p-4 md:p-6 rounded-2xl shadow-[0_10px_25px_-5px_hsl(14_65%_38%/0.5)]">
+        <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-primary text-primary-foreground p-4 md:p-6 rounded-2xl">
           <p className="font-bold text-lg md:text-xl leading-tight">Muitos Anos</p>
           <p className="text-sm opacity-80 uppercase tracking-tighter">De Experiência</p>
         </div>

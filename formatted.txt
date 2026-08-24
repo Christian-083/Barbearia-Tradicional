@@ -1,0 +1,54 @@
+({behavior:"smooth"})};return 
+
+h.jsxs("section",{className:"relative h-screen w-full flex items-center justify-center overflow-hidden",children:[
+h.jsx("img",{src:"https://i.imgur.com/dyQTeXI.png",alt:"Barbearia Seu Galdino",className:"absolute inset-0 w-full h-full object-cover opacity-40"}),
+h.jsx("div",{className:"absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"}),
+
+h.jsxs(le.div,{initial:{opacity:0,y:30},animate:{opacity:1,y:0},transition:{duration:.8,ease:"easeOut"},className:"relative z-10 text-center px-6 max-w-4xl",children:[
+
+h.jsxs("div",{className:"mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass card-shadow text-sm font-medium",children:[
+h.jsx("span",{class
+
+l card-shadow space-y-6",children:[
+h.jsx("h2",{className:"text-2xl md:text-3xl font-bold text-center",children:"Siga no Instagram"}),
+h.jsx("img",{src:"https://i.imgur.com/yw0An8f.jpeg",alt:"Instagram Barbearia Seu Galdino",className:"w-full h-auto max-h-[500px] object-contain rounded-2xl"}),
+h.jsx("a",{href:"https://www.instagram.com/barbearia_seu_galdino",target:"_blank",rel:"noopener noreferrer",className:"flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-xl font-bold text-foreground transition-all hover:opacity-90",children:"Seguir no Instagram"})]})}),e3=()=>{const e=()=>{window.open("https://www.google.com/maps/dir/?api=1&destination=-5.2286549,-37.32378
+
+0x0%3A0x0!2zNcKwMTMnNDMuMiJTIDM3wrAxOScyNS42Ilc!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr",width:"100%",height:"100%",style:{border:0},allowFullScreen:!0,loading:"lazy",title:"Localização Barbearia Seu Galdino"})}),
+h.jsx("button",{onClick:e,className:"w-full py-4 bg-primary text-primary-foreground font-bold rounded-xl transition-all hover:opacity-90 active:scale-[0.98] glow-shadow",children:"📍 Ir até a Barbearia"}),
+h.jsx("img",{src:"https://i.imgur.com/hH6O4v4.jpeg",alt:"Fachada da Barbearia",className:"w-full h-48 md:h-64 object-cover rounded-2xl"}),
+
+h.jsxs("div",{className:"text-center",children:[
+h.jsx("p",{className:"font-bold text-lg",children:"Rua Ten. Matoso, 106"}),
+h.jsx("p",{className:"text-s
+
+e-110"}),"Chamar no WhatsApp"]})})]})]})}),f3=()=>
+
+h.jsxs("footer",{className:"py-12 text-center border-t border-border",children:[
+h.jsx("p",{className:"text-muted-foreground text-sm",children:"© 2024 Barbearia Seu Galdino. Todos os direitos reservados."}),
+h.jsx(xE,{to:"/admin",className:"mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full text-primary/30 hover:text-primary/60 transition-colors","aria-label":"Admin",children:
+h.jsx(s2,{className:"w-4 h-4"})})]}),h3=()=>
+
+h.jsxs("main",{className:"min-h-screen bg-background",children:[
+h.jsx(O4,{}),
+h.jsx(q_,{}),
+h.jsx(Z_,{}),
+h.jsx(J_,{}),
+h.jsx(e3,{}),
+h.jsx(t3,{}),
+h.jsx(n3,{}),
+h.jsx(c3,{}),
+h.jsx(d3,{}),
+h.jsx(f3,{})]}),m3=["Imprevisto","Indisponibilidade","
+
+ h-5 text-primary"})}),
+
+h.jsxs("div",{children:[
+h.jsx("h2",{className:"text-lg font-bold text-foreground",children:"Painel de Controle"}),
+h.jsx("p",{className:"text-xs text-muted-foreground",children:"Barbearia Seu Galdino"})]})]}),
+
+h.jsxs("button",{onClick:()=>e("/"),className:"flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm",children:[
+h.jsx(t2,{className:"w-4 h-4"})," Voltar"]})]}),
+h.jsx("div",{className:"flex border-b border-primary/10 sticky top-[68px] md:top-[76px] bg-background/80 backdrop-blur-xl z-10",children:Ni.map(R=>
+
+h.jsxs("button",{onClick:()=>n(R.key),className:`flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-medium transition-all relative 

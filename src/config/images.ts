@@ -19,6 +19,14 @@ import g12 from '../Image/Barbearia_Tradicional (12).jpg';
 import g13 from '../Image/Barbearia_Tradicional (13).jpg';
 import g14 from '../Image/Barbearia_Tradicional (14).jpg';
 
+// Testimonials
+import dep1 from '../Image/depoimento-1.png';
+import dep2 from '../Image/depoimento-2.png';
+import dep3 from '../Image/depoimento-3.png';
+import dep4 from '../Image/depoimento-4.png';
+import dep5 from '../Image/depoimento-5.png';
+import dep6 from '../Image/depoimento-6.png';
+
 export const IMAGES = {
   hero: topoImg,
   about: aboutImg,
@@ -41,6 +49,14 @@ export const IMAGES = {
     g12,
     g13,
     g14,
+  ],
+  testimonials: [
+    dep1,
+    dep2,
+    dep3,
+    dep4,
+    dep5,
+    dep6,
   ],
 };
 

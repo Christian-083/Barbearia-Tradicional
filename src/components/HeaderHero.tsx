@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Shield, Scissors } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import { isOpenNow } from '../utils/whatsapp';
 import { IMAGES } from '../config/images';
 
@@ -21,8 +21,8 @@ export const HeaderHero: React.FC = () => {
   };
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* Background Image: Barbearia_Tradicional TOPO.jpg */}
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-background">
+      {/* Background Image */}
       <img
         src={IMAGES.hero}
         alt="Barbearia Tradicional TOPO"
@@ -33,13 +33,11 @@ export const HeaderHero: React.FC = () => {
             target.src = '/Image/Barbearia_Tradicional TOPO.jpg';
           }
         }}
-        className="absolute inset-0 w-full h-full object-cover object-top opacity-35"
+        className="absolute inset-0 w-full h-full object-cover object-top opacity-50"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background" />
-
-      {/* Ambient background glow elements */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+      
+      {/* Clean Gradient Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Top Header Bar with Admin Link */}
       <div className="absolute top-6 right-6 z-20 flex items-center gap-3">
@@ -58,48 +56,32 @@ export const HeaderHero: React.FC = () => {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="relative z-10 text-center px-6 max-w-4xl"
       >
-        <div className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass card-shadow text-sm font-medium">
+        <div className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/5 bg-white/5 backdrop-blur-sm text-sm font-medium">
           <span
             className={`w-2 h-2 rounded-full animate-pulse ${
               openStatus ? 'bg-green-500' : 'bg-red-500'
             }`}
           />
-          <span>{openStatus ? 'Aberto Agora' : 'Fechado Agora'}</span>
+          <span className="text-gray-200">{openStatus ? 'Aberto Agora' : 'Fechado Agora'}</span>
         </div>
 
-        <div className="flex items-center justify-center gap-3 mb-4 text-primary">
-          <Scissors className="w-6 h-6" />
-          <span className="text-sm font-bold tracking-widest uppercase">A Tradicional Barbearia</span>
-          <Scissors className="w-6 h-6 rotate-180" />
-        </div>
-
-        <h1 className="text-4xl md:text-7xl font-bold mb-6 tracking-tight">
-          Onde a tradição encontra o{' '}
-          <span className="text-primary">estilo moderno.</span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+          Onde a tradição encontra <br />
+          o <span className="text-primary">estilo moderno.</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-          Cortes de precisão, ambiente exclusivo e o cuidado que você merece.
-          Agende sua experiência com Dona Renata.
+        <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-normal">
+          Cortes de precisão, ambiente exclusivo e o cuidado que você merece. <br className="hidden md:block" />
+          Agende sua experiência com o mestre Seu Galdino.
         </p>
 
-        <motion.button
+        <button
           onClick={scrollToBooking}
-          animate={{
-            boxShadow: [
-              '0 0 20px hsl(14 65% 38% / 0.3), 0 0 40px hsl(14 65% 38% / 0.15)',
-              '0 0 30px hsl(14 65% 38% / 0.5), 0 0 60px hsl(14 65% 38% / 0.3)',
-              '0 0 20px hsl(14 65% 38% / 0.3), 0 0 40px hsl(14 65% 38% / 0.15)',
-            ],
-            scale: [1, 1.03, 1],
-          }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-xl transition-all active:scale-95 text-lg cursor-pointer"
+          className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-xl transition-all active:scale-95 text-lg"
         >
           Agendar Horário
-        </motion.button>
+        </button>
       </motion.div>
     </section>
   );
 };
-
