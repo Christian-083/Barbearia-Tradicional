@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/Barbearia_Tradicional/(.*)",
+      "destination": "/Barbearia_Tradicional/$1"
+    },
+    {
       "source": "/images/(.*)",
       "destination": "/images/$1"
     },
