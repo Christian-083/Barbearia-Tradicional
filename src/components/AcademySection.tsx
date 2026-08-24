@@ -42,8 +42,11 @@ export const AcademySection: React.FC = () => {
           className="rounded-3xl overflow-hidden border border-academy/30 academy-glow card-shadow max-w-3xl mx-auto"
         >
           <img
-            src="https://i.imgur.com/QOkaCue.png"
+            src="/images/academy.png"
             alt="Aluno do curso prático Dona Renata Academy"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = 'https://i.imgur.com/QOkaCue.png';
+            }}
             className="w-full h-auto object-contain"
             loading="lazy"
           />

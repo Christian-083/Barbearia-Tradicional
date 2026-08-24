@@ -257,8 +257,11 @@ Obrigado! 🙏`;
                   className="relative shrink-0 snap-center w-[240px] md:w-[260px] h-[320px] md:h-[360px] rounded-3xl cursor-pointer overflow-hidden group shadow-lg border border-border/30 hover:border-primary/50 transition-all duration-300"
                 >
                   <img
-                    src={service.image}
+                    src={service.image || '/images/corte-de-cabelo-social-2.webp'}
                     alt={service.name}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/images/corte-de-cabelo-social-2.webp';
+                    }}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   {/* Dark gradient overlay */}

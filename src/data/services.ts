@@ -16,7 +16,7 @@ export const SERVICES: Service[] = [
     name: 'Degradê',
     time: 30,
     price: 30,
-    image: 'https://barbeariabigboss.com.br/wp-content/uploads/2025/07/a-historia-do-corte-degrade.png',
+    image: '/images/service-degrade.png',
   },
   {
     id: 's2',
@@ -30,7 +30,7 @@ export const SERVICES: Service[] = [
     name: 'Barba',
     time: 20,
     price: 20,
-    image: 'https://static.ndmais.com.br/2021/03/istock-1185955900-800x533.jpg',
+    image: '/images/service-barba.jpg',
   },
 ];
 
@@ -350,7 +350,7 @@ export const GALLERY_IMAGES = [
   '/images/gallery-12.jpg',
   '/images/gallery-13.jpg',
   '/images/gallery-14.jpg',
-  '/images/Barbearia-Instragram.jpeg',
+  '/images/instagram.jpg',
 ];
 
 export const BARBERSHOP_PHONE = '5588998577627';

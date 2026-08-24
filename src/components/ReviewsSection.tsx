@@ -3,12 +3,12 @@ import { motion } from 'motion/react';
 import { Star } from 'lucide-react';
 
 const REVIEWS = [
-  "https://barbearia-e.netlify.app/assets/depoimento-1-BmKDqp4_.png",
-  "https://barbearia-e.netlify.app/assets/depoimento-2-KnB4UowP.png",
-  "https://barbearia-e.netlify.app/assets/depoimento-3-CQpzjvcR.png",
-  "https://barbearia-e.netlify.app/assets/depoimento-4-FSJQf-XH.png",
-  "https://barbearia-e.netlify.app/assets/depoimento-5-DVlb23Bf.png",
-  "https://barbearia-e.netlify.app/assets/depoimento-6-CeudhoFU.png",
+  "/images/depoimento-1.png",
+  "/images/depoimento-2.png",
+  "/images/depoimento-3.png",
+  "/images/depoimento-4.png",
+  "/images/depoimento-5.png",
+  "/images/depoimento-6.png",
 ];
 
 export const ReviewsSection: React.FC = () => {

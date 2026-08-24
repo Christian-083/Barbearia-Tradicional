@@ -35,6 +35,9 @@ export const HeaderHero: React.FC = () => {
       <img
         src="/images/hero.jpg"
         alt="A Tradicional Barbearia"
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).src = '/images/topo.jpg';
+        }}
         className="absolute inset-0 w-full h-full object-cover object-top opacity-40"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />

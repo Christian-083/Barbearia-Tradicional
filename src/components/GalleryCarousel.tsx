@@ -90,6 +90,9 @@ export const GalleryCarousel: React.FC = () => {
               src={imgUrl}
               alt={`Galeria ${index + 1}`}
               loading="lazy"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/images/gallery-1.jpg';
+              }}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />

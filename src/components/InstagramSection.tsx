@@ -18,8 +18,12 @@ export const InstagramSection: React.FC = () => {
 
         <div className="w-full flex justify-center">
           <img
-            src="/images/Barbearia-Instragram.jpeg"
+            src="/images/instagram.jpg"
             alt="Instagram A Tradicional Barbearia"
+            onError={(e) => {
+              // Fallback to alias if needed
+              (e.currentTarget as HTMLImageElement).src = '/images/Barbearia-Instragram.jpeg';
+            }}
             className="w-full h-auto max-h-[500px] object-contain rounded-2xl"
           />
         </div>

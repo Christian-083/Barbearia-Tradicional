@@ -56,8 +56,11 @@ export const LocationSection: React.FC = () => {
         {/* Location Image */}
         <div className="w-full h-44 sm:h-56 md:h-64 rounded-xl overflow-hidden">
           <img 
-            src="/images/Fachada_Barbearia.jpg" 
+            src="/images/fachada.jpg" 
             alt="Fachada A Tradicional Barbearia" 
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = '/images/Fachada_Barbearia.jpg';
+            }}
             className="w-full h-full object-cover"
           />
         </div>
