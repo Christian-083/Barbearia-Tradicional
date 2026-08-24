@@ -21,6 +21,13 @@ export const InstagramSection: React.FC = () => {
           <img
             src={IMAGES.instagram}
             alt="Instagram A Tradicional Barbearia"
+            onError={(e) => {
+              const target = e.currentTarget as HTMLImageElement;
+              if (!target.dataset.tried1) {
+                target.dataset.tried1 = 'true';
+                target.src = '/Barbearia_Tradicional/Barbearia-Instragram.jpeg';
+              }
+            }}
             className="w-full h-auto max-h-[500px] object-contain rounded-2xl"
           />
         </div>

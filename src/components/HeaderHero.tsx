@@ -36,6 +36,16 @@ export const HeaderHero: React.FC = () => {
       <img
         src={IMAGES.hero}
         alt="A Tradicional Barbearia"
+        onError={(e) => {
+          const target = e.currentTarget as HTMLImageElement;
+          if (!target.dataset.tried1) {
+            target.dataset.tried1 = 'true';
+            target.src = '/Barbearia_Tradicional/Barbearia_Tradicional TOPO.jpg';
+          } else if (!target.dataset.tried2) {
+            target.dataset.tried2 = 'true';
+            target.src = '/Barbearia_Tradicional/Barbearia_Tradicional_TOPO.jpg';
+          }
+        }}
         className="absolute inset-0 w-full h-full object-cover object-top opacity-40"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />

@@ -59,6 +59,13 @@ export const ReviewsSection: React.FC = () => {
               src={src}
               alt={`Avaliação ${idx + 1}`}
               loading="lazy"
+              onError={(e) => {
+                const target = e.currentTarget as HTMLImageElement;
+                if (!target.dataset.tried1) {
+                  target.dataset.tried1 = 'true';
+                  target.src = `/Barbearia_Tradicional/depoimento-${idx + 1}.png`;
+                }
+              }}
               className="w-full h-[60px] md:h-[70px] object-cover object-top"
             />
           </div>

@@ -59,6 +59,13 @@ export const LocationSection: React.FC = () => {
           <img 
             src={IMAGES.fachada} 
             alt="Fachada A Tradicional Barbearia" 
+            onError={(e) => {
+              const target = e.currentTarget as HTMLImageElement;
+              if (!target.dataset.tried1) {
+                target.dataset.tried1 = 'true';
+                target.src = '/Barbearia_Tradicional/Fachada_Barbearia.jpg';
+              }
+            }}
             className="w-full h-full object-cover"
           />
         </div>

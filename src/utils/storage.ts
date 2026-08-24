@@ -96,7 +96,15 @@ export function removeCompletedBooking(id: string): Booking | undefined {
 export function getBarbers(): Barber[] {
   try {
     const data = localStorage.getItem(BARBERS_KEY);
-    return data ? JSON.parse(data) : BARBERS;
+    if (!data) return BARBERS;
+    const parsed: Barber[] = JSON.parse(data);
+    return parsed.map((b) => {
+      const original = BARBERS.find((orig) => orig.id === b.id);
+      return {
+        ...b,
+        photo: (original && original.photo) || b.photo,
+      };
+    });
   } catch {
     return BARBERS;
   }
@@ -114,7 +122,15 @@ export function saveBarbers(barbers: Barber[]): void {
 export function getServices(): Service[] {
   try {
     const data = localStorage.getItem(SERVICES_KEY);
-    return data ? JSON.parse(data) : SERVICES;
+    if (!data) return SERVICES;
+    const parsed: Service[] = JSON.parse(data);
+    return parsed.map((s) => {
+      const original = SERVICES.find((orig) => orig.id === s.id);
+      return {
+        ...s,
+        image: (original && original.image) || s.image,
+      };
+    });
   } catch (e) {
     return SERVICES;
   }

@@ -45,6 +45,13 @@ export const AcademySection: React.FC = () => {
           <img
             src={IMAGES.academy}
             alt="Aluno do curso prático Dona Renata Academy"
+            onError={(e) => {
+              const target = e.currentTarget as HTMLImageElement;
+              if (!target.dataset.tried1) {
+                target.dataset.tried1 = 'true';
+                target.src = '/Barbearia_Tradicional/academy.png';
+              }
+            }}
             className="w-full h-auto object-contain"
             loading="lazy"
           />
